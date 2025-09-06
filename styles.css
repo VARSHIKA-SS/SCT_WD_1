@@ -5,23 +5,26 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  background: #fafafa;
+  color: #222;
 }
 
+/* Navbar */
 nav {
   position: fixed;
+  top: 0;
   width: 100%;
-  background: #333;
-  color: white;
+  background: #222; /* Dark base for contrast */
   padding: 15px 0;
   transition: background 0.3s ease, box-shadow 0.3s ease;
-  z-index: 999;
+  z-index: 1000;
 }
 
 nav.scrolled {
-  background: #222;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  background: #111; /* Darker when scrolled */
+  box-shadow: 0 3px 12px rgba(0,0,0,0.4);
 }
 
 nav ul {
@@ -35,21 +38,58 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: #f5f5f5;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #ff6347;
-  border-bottom: 2px solid #ff6347;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ff9800; /* Warm bright accent */
 }
 
+/* Sections with bright, harmonious colors */
 section {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: background 0.6s ease-in-out, color 0.6s ease;
 }
 
+#home {
+  background: #a8edea; /* Mint / Aqua */
+  color: #222;
+}
+
+#features {
+  background: #89cff0; /* Bright sky blue */
+  color: #111;
+}
+
+#about {
+  background: #ffcf9d; /* Peach */
+  color: #111;
+}
+
+#contact {
+  background: #d7bde2; /* Lavender */
+  color: #111;
+}
+
+/* Section fade-in effect */
+section h1 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible h1 {
+  opacity: 1;
+  transform: translateY(0);
+}
